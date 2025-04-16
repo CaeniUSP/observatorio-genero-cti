@@ -19,23 +19,23 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav class="px-4 sm:px-6 md:px-10 navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="px-4 sm:px-6 md:px-10 container-fluid px-3 sm:px-4">
-      <a class="px-4 sm:px-6 md:px-10 navbar-brand fw-bold text-dark" href="#">Observatório</a>
+  <nav class="container  navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container  container-fluid px-3 px-4">
+      <a class="container  navbar-brand fw-bold text-dark" href="#">Observatório</a>
       <button
         v-if="!screenIsLarge"
-        class="px-4 sm:px-6 md:px-10 navbar-toggler"
+        class="container  navbar-toggler"
         type="button"
         @click="isOpen = !isOpen"
         :aria-expanded="isOpen.toString()"
         aria-label="Toggle navigation"
       >
-        <span class="px-4 sm:px-6 md:px-10 navbar-toggler-icon"></span>
+        <span class="container  navbar-toggler-icon"></span>
       </button>
 
       <div
-        :class="[
-            'px-4 sm:px-6 md:px-10',
+        class="container [
+            '',
             'navbar-collapse justify-content-end',
             screenIsLarge ? '' : 'collapse',
             isOpen && !screenIsLarge ? 'show' : ''
@@ -44,21 +44,21 @@ onBeforeUnmount(() => {
         >
 
 
-        <ul class="px-4 sm:px-6 md:px-10 navbar-nav">
-          <li class="px-4 sm:px-6 md:px-10 nav-item">
-            <a class="px-4 sm:px-6 md:px-10 nav-link" href="#sobre">Sobre</a>
+        <ul class="container  navbar-nav">
+          <li class="container  nav-item">
+            <a class="container  nav-link" href="#sobre">Sobre</a>
           </li>
-          <li class="px-4 sm:px-6 md:px-10 nav-item">
-            <a class="px-4 sm:px-6 md:px-10 nav-link" href="#equipe">Equipe</a>
+          <li class="container  nav-item">
+            <a class="container  nav-link" href="#equipe">Equipe</a>
           </li>
-          <li class="px-4 sm:px-6 md:px-10 nav-item">
-            <a class="px-4 sm:px-6 md:px-10 nav-link" href="#indicadores">Indicadores</a>
+          <li class="container  nav-item">
+            <a class="container  nav-link" href="#indicadores">Indicadores</a>
           </li>
-          <li class="px-4 sm:px-6 md:px-10 nav-item">
-            <a class="px-4 sm:px-6 md:px-10 nav-link" href="#publicacoes">Publicações</a>
+          <li class="container  nav-item">
+            <a class="container  nav-link" href="#publicacoes">Publicações</a>
           </li>
-          <li class="px-4 sm:px-6 md:px-10 nav-item">
-            <a class="px-4 sm:px-6 md:px-10 nav-link" href="#contato">Contato</a>
+          <li class="container  nav-item">
+            <a class="container  nav-link" href="#contato">Contato</a>
           </li>
         </ul>
       </div>

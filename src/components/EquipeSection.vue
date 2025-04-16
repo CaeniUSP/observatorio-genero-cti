@@ -20,18 +20,18 @@ const membros = [
 </script>
 
 <template>
-  <section class="px-4 sm:px-6 md:px-10 bg-gray-50 py-16 px-4 md:px-5">
-    <div class="px-4 sm:px-6 md:px-10 max-w-6xl mx-auto text-center">
-      <h2 class="px-4 sm:px-6 md:px-10 text-3xl font-semibold mb-10 text-gray-800">Equipe</h2>
-      <div class="px-4 sm:px-6 md:px-10 flex space-x-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scroll-smooth">
+  <section class="container  bg-gray-50 py-16 px-4 px-5">
+    <div class="container  max-w-6xl mx-auto text-center">
+      <h2 class="container  text-3xl font-semibold mb-10 text-gray-800">Equipe</h2>
+      <div class="container  flex space-x-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scroll-smooth">
         <div
           v-for="membro in membros"
           :key="membro.nome"
-          class="px-4 sm:px-6 md:px-10 min-w-[250px] flex-shrink-0 bg-white shadow-md rounded-lg p-6 snap-start"
+          class="container  min-w-[250px] flex-shrink-0 bg-white shadow-md rounded p-6 snap-start"
         >
-          <img :src="membro.imagem" :alt="membro.nome" class="px-4 sm:px-6 md:px-10 w-24 h-24 mx-auto rounded-full object-cover mb-4">
-          <h3 class="px-4 sm:px-6 md:px-10 text-lg font-semibold text-gray-900">{{ membro.nome }}</h3>
-          <p class="px-4 sm:px-6 md:px-10 text-sm text-gray-600">{{ membro.cargo }}</p>
+          <img :src="membro.imagem" :alt="membro.nome" class="container  w-24 h-24 mx-auto rounded-full object-cover mb-4">
+          <h3 class="container  text-lg font-semibold text-gray-900">{{ membro.nome }}</h3>
+          <p class="container  text-sm text-gray-600">{{ membro.cargo }}</p>
         </div>
       </div>
     </div>
