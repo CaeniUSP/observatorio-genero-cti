@@ -59,6 +59,21 @@ section {
   padding-bottom: 5rem;
 }
 
+/* Customização do ícone hambúrguer */
+.toggler-icon {
+  font-size: 1.5rem;               /* tamanho do ícone */
+  color: var(--color-secondary);     /* cor padrão */
+  transition: color 0.3s ease;
+}
+
+/* Ao passar o mouse no botão, pinta do color-secondary */
+.navbar-toggler:hover .toggler-icon {
+  color: var(--color-secondary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 /* Animações personalizadas para Tailwind */
 .animation-delay-0 {
   animation-delay: 0s;

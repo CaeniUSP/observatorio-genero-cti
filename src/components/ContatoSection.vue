@@ -1,5 +1,5 @@
 <template>
-  <section class="container  bg-white py-16 px-6">
+  <section id="contato" class="container  bg-white py-16 px-6">
     <div class="container  max-w-md max-w-lg mx-auto">
       <h2 style="color: #333f42;" class="container  text-3xl font-semibold mb-6 text-center text-gray-800">Contato</h2>
       <form class="container  grid gap-4">

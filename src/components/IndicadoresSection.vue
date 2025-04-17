@@ -1,5 +1,5 @@
 <template>
-  <section class="container  bg-gray-50 py-16 px-6">
+  <section id="indicadores" class="container  bg-gray-50 py-16 px-6">
     <div class="container  max-w-6xl mx-auto">
       <h2 style="color: #333f42;" class="container  text-3xl font-semibold mb-8 text-gray-800">Dados e Indicadores</h2>
       <div class="container  row row-cols-1 row-cols-sm-2 gap-8">

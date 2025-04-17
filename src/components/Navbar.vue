@@ -2,66 +2,95 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const isOpen = ref(false)
-const screenIsLarge = ref(false)
+const isScrolled = ref(false)
 
-const updateScreenSize = () => {
-  screenIsLarge.value = window.innerWidth >= 992 // Bootstrap breakpoint 'lg'
+function toggleMenu() {
+  isOpen.value = !isOpen.value
+}
+
+function onScroll() {
+  isScrolled.value = window.scrollY > 50
 }
 
 onMounted(() => {
-  updateScreenSize()
-  window.addEventListener('resize', updateScreenSize)
+  window.addEventListener('scroll', onScroll)
 })
-
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', updateScreenSize)
+  window.removeEventListener('scroll', onScroll)
 })
 </script>
 
 <template>
-  <nav class="container  navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container  container-fluid px-3 px-4">
-      <a class="container  navbar-brand fw-bold text-dark" href="#">Observatório</a>
+  <nav
+    :class="[
+      'sticky-top transition-all duration-500 z-50',
+      isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    ]"
+  >
+    <div class="container d-flex align-items-center py-3">
+      <!-- Título/Logo -->
+      <a class="navbar-brand fw-bold text-dark me-auto" href="#">Observatório</a>
+
+      <!-- Links desktop -->
+      <ul class="navbar-nav d-none d-lg-flex flex-row gap-4">
+        <li v-for="(item, i) in ['Sobre','Equipe','Indicadores','Publicações','Contato']" :key="i" class="nav-item">
+          <a
+            :href="`#${item.toLowerCase()}`"
+            class="nav-link position-relative text-dark px-0"
+          >
+            {{ item }}
+            <span
+              class="position-absolute bottom-0 start-0 bg-secondary"
+              style="height:2px; width:0"
+              :class="['transition-all duration-300', 'group-hover:w-100']"
+            ></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Botão mobile -->
       <button
-        v-if="!screenIsLarge"
-        class="container  navbar-toggler"
+        class="navbar-toggler d-lg-none border-0 p-2"
         type="button"
-        @click="isOpen = !isOpen"
-        :aria-expanded="isOpen.toString()"
-        aria-label="Toggle navigation"
+        @click="toggleMenu"
+        aria-label="Menu"
       >
-        <span class="container  navbar-toggler-icon"></span>
+        <i
+          :class="[
+            'fas',
+            isOpen ? 'fa-times' : 'fa-bars',
+            'toggler-icon transition-transform duration-300'
+          ]"
+        ></i>
       </button>
+    </div>
 
-      <div
-        class="container [
-            '',
-            'navbar-collapse justify-content-end',
-            screenIsLarge ? '' : 'collapse',
-            isOpen && !screenIsLarge ? 'show' : ''
-        ]"
-        id="navbarNav"
-        >
-
-
-        <ul class="container  navbar-nav">
-          <li class="container  nav-item">
-            <a class="container  nav-link" href="#sobre">Sobre</a>
-          </li>
-          <li class="container  nav-item">
-            <a class="container  nav-link" href="#equipe">Equipe</a>
-          </li>
-          <li class="container  nav-item">
-            <a class="container  nav-link" href="#indicadores">Indicadores</a>
-          </li>
-          <li class="container  nav-item">
-            <a class="container  nav-link" href="#publicacoes">Publicações</a>
-          </li>
-          <li class="container  nav-item">
-            <a class="container  nav-link" href="#contato">Contato</a>
-          </li>
-        </ul>
-      </div>
+    <!-- Menu mobile -->
+    <div v-if="isOpen" class="d-lg-none bg-white shadow-lg">
+      <ul class="navbar-nav mx-3 my-2">
+        <li v-for="(item, i) in ['Sobre','Equipe','Indicadores','Publicações','Contato']" :key="i" class="nav-item mb-2">
+          <a
+            :href="`#${item.toLowerCase()}`"
+            class="nav-link text-dark"
+            @click="toggleMenu"
+          >
+            {{ item }}
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
+
+<style>
+.bg-secondary {
+  background-color: var(--color-secondary) !important;
+}
+.toggler-icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+.navbar-toggler:hover .toggler-icon {
+  color: var(--color-secondary);
+}
+</style>

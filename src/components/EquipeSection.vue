@@ -3,24 +3,24 @@ const membros = [
   {
     nome: 'Janina Onuki',
     cargo: 'Coordenadora',
-    imagem: '../assets/vue.svg'
+    imagem: '/src/assets/vue.svg'
   },
   {
     nome: 'Fulano de Tal',
     cargo: 'Pesquisador',
-    imagem: '../assets/vue.svg'
+    imagem: '/src/assets/vue.svg'
   },
   {
     nome: 'Ciclana Silva',
     cargo: 'Analista de dados',
-    imagem: '../assets/vue.svg'
+    imagem: '/src/assets/vue.svg'
   }
   // Adicione mais membros aqui conforme necessário
 ]
 </script>
 
 <template>
-  <section class="container  bg-gray-50 py-16 px-4 px-5">
+  <section id = "equipe" class="container  bg-gray-50 py-16 px-4 px-5">
     <div class="container  max-w-6xl mx-auto text-center">
       <h2 class="container  text-3xl font-semibold mb-10 text-gray-800">Equipe</h2>
       <div class="container  flex space-x-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scroll-smooth">

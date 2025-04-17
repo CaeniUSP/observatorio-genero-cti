@@ -1,5 +1,5 @@
 <template>
-  <section class="container  container px-4 px-5 py-16 text-gray-800">
+  <section id ="sobre" class="container  container px-4 px-5 py-16 text-gray-800">
     <div class="container  max-w-3xl container mx-auto">
       <h2 class="container  text-3xl font-semibold mb-6">Sobre Nós</h2>
       <p class="container  mb-4 text-justify">
