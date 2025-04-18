@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "type": "article",
+    "link": "https://revistapesquisa.fapesp.br/consorcio-mapeia-desigualdade-de-genero-na-ciencia-em-16-paises-e-propoe-acoes/",
+    "title": "  Consórcio mapeia desigualdade de gênero na ciência em 16 países e propõe ações",
+    "description": "Um consórcio internacional de pesquisadores está reunindo dados comparativos de 16 países de quatro continentes sobre desigualdades de gênero no ambiente de ciência, tecnologia e inovação (CTI) e vem compartilhando estratégias e boas práticas para enfrentar o problema e mitigar seus efeitos. Coordenado por um grupo da Universidade Politécnica de Madri, na Espanha, o projeto Gender STI teve início em 2020 e já produziu diagnósticos que corroboram a sub-representação feminina em carreiras ligadas à ciência, tecnologia, matemática e engenharia (Stem) em várias nações e mostram as dificuldades encaradas por mulheres para ocupar postos de alta hierarquia em instituições de pesquisa…",
+    "image": "",
+    "author": "@PesquisaFapesp",
+    "date": ""
+  },
+  {
+    "id": 2,
+    "type": "article",
+    "link": "https://www.gender-sti.org/liedi-bernucci-usp-women-in-leadership-2021/",
+    "title": "Liedi Bernucci IWD 2021 Interview: \"Innovation Has No Gender\"",
+    "description": "Liedi Bernucci, dean at the Universidade of São Paulo, speaks about her leadership journey and goals for International Women's Day 2021.",
+    "image": "",
+    "author": "jody",
+    "date": "2021-03-05T17:26:48+00:00"
+  },
+  {
+    "id": 3,
+    "type": "podcast",
+    "link": "https://revistapesquisa.fapesp.br/janina-onuki/",
+    "title": "  Janina Onuki",
+    "description": "Janina Onuki, cientista política, integra consórcio internacional que estuda ciência e gênero. Apresentação: Fabrício Marques Produção, roteiro e edição: Sarah Caravieri",
+    "image": "",
+    "author": "@PesquisaFapesp",
+    "date": ""
+  }
+]
