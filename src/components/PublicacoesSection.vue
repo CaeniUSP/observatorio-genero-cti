@@ -1,18 +1,26 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import SwiperCore from 'swiper/core'
+
+// CSS do Swiper
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
 import recursosRaw from '../data/recursos.json'
+
+// registra os módulos
+SwiperCore.use([Navigation, Pagination, Autoplay])
 
 const router = useRouter()
 
-// Ordena do mais recente para o mais antigo
+// ordena e extrai top3
 const recursosOrdenados = computed(() =>
-  recursosRaw
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+  recursosRaw.slice().sort((a, b) => new Date(b.date) - new Date(a.date))
 )
-
-// Pega só os 3 primeiros para o preview
 const top3 = computed(() => recursosOrdenados.value.slice(0, 3))
 
 function verTodas() {
@@ -21,82 +29,55 @@ function verTodas() {
 </script>
 
 <template>
-  <section id="publicacoes" class="container bg-white py-16 px-4 sm:px-6 text-gray-800">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-primary">Publicações &amp; Mídia</h2>
-
-      <!-- Carrossel Bootstrap -->
-      <div id="carouselPublicacoes" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div
-            v-for="(item, index) in top3"
-            :key="item.id"
-            :class="['carousel-item', { active: index === 0 }]"
-          >
-            <a :href="item.link" target="_blank" class="d-block text-decoration-none">
-              <div
-                class="flex flex-col bg-white border rounded-lg shadow-md p-6
-                       hover:shadow-lg transition-shadow"
-              >
-                <!-- IMAGEM -->
-                <div v-if="item.image" class="mb-4">
-                  <img
-                    :src="item.image"
-                    :alt="item.title"
-                    class="w-full h-40 object-cover rounded-md"
-                  />
-                </div>
-
-                <!-- Ícone dinâmico -->
-                <div class="mb-4 text-secondary flex justify-center text-3xl">
-                  <i v-if="item.type === 'pdf'" class="fas fa-file-pdf fa-2x"></i>
-                  <i v-else-if="item.type === 'article'" class="fas fa-newspaper fa-2x"></i>
-                  <i v-else-if="item.type === 'podcast'" class="fas fa-podcast fa-2x"></i>
-                </div>
-
-                <!-- Conteúdo -->
-                <h3 class="text-xl font-medium mb-1 text-center">{{ item.title }}</h3>
-                <p class="text-xs text-gray-500 mb-2 text-center">
-                  {{ new Date(item.date).toLocaleDateString('pt-BR', {
-                     day: '2-digit', month: '2-digit', year: 'numeric'
-                  }) }}
-                </p>
-                <p class="text-sm flex-1 mb-4">{{ item.description }}</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <!-- Controles -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselPublicacoes"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselPublicacoes"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Próximo</span>
-        </button>
-      </div>
-
-      <!-- Botão “Ver todas” -->
-      <div class="text-center mt-8">
-        <button
-          @click="verTodas"
-          class="btn btn-primary px-6 py-3 rounded-pill"
-        >
-          Ver todas as publicações
-        </button>
-      </div>
+  <section id="publicacoes" class="container bg-white py-16 px-4 text-gray-800">
+    <div class="max-w-5xl mx-auto mb-6 flex justify items-center">
+      
+      <button
+        @click="verTodas"
+        class="btn btn-outline btn-sm rounded-circle p-2"
+        aria-label="Ver todas"
+      >
+        <h2 class="text-3xl font-semibold">Publicações &amp; Mídia  <i class="fas fa-plus"></i></h2>
+        
+      </button>
     </div>
+
+    <Swiper
+      navigation
+      pagination
+      :autoplay="{ delay: 5000, disableOnInteraction: false }"
+      :slides-per-view="1"
+      :space-between="16"
+      :breakpoints="{ 640: { slidesPerView: 1 }, 1024: { slidesPerView: 1 } }"
+      class="py-4"
+    >
+      <SwiperSlide v-for="item in top3" :key="item.id" class="flex justify-center">
+        <a :href="item.link" target="_blank" class="block">
+          <div
+          class="flex flex-col bg-white border rounded-lg shadow-md p-6
+                  hover:shadow-lg transition-shadow mx-auto"
+           style="min-width:18rem; max-width:50rem; min-height:18rem; max-height:18rem;"
+          >
+            
+            <div class="mb-4 flex justify-center text-secondary text-3xl">
+              <i v-if="item.type === 'pdf'" class="fas fa-file-pdf fa-2x"></i>
+              <i v-else-if="item.type === 'Reportagem'" alt = "{{item.type}}" class="fas fa-newspaper fa-2x"></i>
+              <i v-else-if="item.type === 'Entrevista'" alt = "{{item.type}}" class="fas fa-newspaper fa-2x"></i>
+              <i v-else-if="item.type === 'Podcast'" alt = "{{item.type}}" class="fas fa-podcast fa-2x" placeholder="{{item.type}}"></i>
+            </div>
+            <h3 class="mb-1 text-center text-xl font-medium">{{ item.title }}</h3>
+            <h4 class="mb-1 text-center text-xl font-small">{{ item.type }}</h4>
+            <p class="mb-2 text-center text-xs text-gray-500">
+              {{ new Date(item.date).toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+              }) }}
+            </p>
+            <p class="flex-1 text-sm overflow-y-auto mb-4" style="max-height:10rem;">{{ item.description }}</p>
+          </div>
+        </a>
+      </SwiperSlide>
+    </Swiper>
   </section>
 </template>

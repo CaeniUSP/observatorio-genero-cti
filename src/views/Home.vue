@@ -1,13 +1,14 @@
 <template>
     <div>
-      <Navbar />
-      <HeroSection />
-      <SobreSection />
-      <IndicadoresSection />
-      <EquipeSection />
-      <PublicacoesSection />
-      <ContatoSection />
-      <FooterSection />
+        <Navbar />
+        <HeroSection />
+        <SobreSection />
+        <IndicadoresSection />
+        <EquipeSection />
+        <PublicacoesSection />
+        <ContatoSection />
+        <PatrocinadoresSection />
+        <FooterSection />
     </div>
   </template>
   
@@ -20,5 +21,6 @@
   import EquipeSection    from '../components/EquipeSection.vue'
   import ContatoSection   from '../components/ContatoSection.vue'
   import FooterSection    from '../components/FooterSection.vue'
+  import PatrocinadoresSection from '../components/PatrocinadoresSection.vue'
   </script>
   
