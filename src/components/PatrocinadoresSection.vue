@@ -1,9 +1,9 @@
 <template>
-    <section id="patrocinadores" class="py-16 bg-gray-50 text-gray-800">
-      <div class="container max-w-6xl mx-auto px-4 sm:px-6 text-center mb-8">
-        <h2 class="text-3xl font-semibold">Parceiros</h2>
-      </div>
-      <div class="container max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="patrocinadores" class="container py-16 bg-gray-50 text-gray-800">
+
+      <h2 class="text-3xl font-semibold">Parceiros</h2>
+      
+      <div class=" max-w-6xl mx-auto px-4 sm:px-6">
         <div class="flex flex-wrap justify-center items-center">
           <a
             v-for="s in sponsors"

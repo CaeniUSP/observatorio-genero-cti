@@ -30,15 +30,15 @@ function verTodas() {
 
 <template>
   <section id="publicacoes" class="container bg-white py-16 px-4 text-gray-800">
-    <div class="max-w-5xl mx-auto mb-6 flex justify items-center">
-      
+    <!-- Cabeçalho com “Acessar tudo” -->
+    <div class="max-w-5xl mx-auto mb-6 flex items-center justify-between">
+      <h2 class="text-3xl font-semibold ">Publicações &amp; Mídia</h2>
       <button
         @click="verTodas"
-        class="btn btn-outline btn-sm rounded-circle p-2"
-        aria-label="Ver todas"
+        class="px-4 py-2 rounded-full font-medium
+               bg-secondary text-white hover:bg-primary transition-colors"
       >
-        <h2 class="text-3xl font-semibold">Publicações &amp; Mídia  <i class="fas fa-plus"></i></h2>
-        
+        Acessar tudo
       </button>
     </div>
 
@@ -81,3 +81,15 @@ function verTodas() {
     </Swiper>
   </section>
 </template>
+
+
+
+<style scoped>
+/* Variáveis definidas no seu CSS global */
+:root {
+  --color-primary: #333f42;
+  --color-secondary: #8c78c1;
+}
+
+/* Utility classes se precisar, mas o Tailwind já puxará as cores via text-primary/bg-secondary */
+</style>

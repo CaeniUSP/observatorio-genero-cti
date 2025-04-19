@@ -29,7 +29,9 @@ onBeforeUnmount(() => {
   >
     <div class="container d-flex align-items-center py-3">
       <!-- Título/Logo -->
-      <a class="navbar-brand fw-bold text-dark me-auto" href="#">Observatório</a>
+      <a class="navbar-brand fw-bold text-dark me-auto" href="/">
+        <!--<img src="../assets/simbulo.png" alt="Observatório Paulista de Gênero em CT & I">-->
+      </a>
 
       <!-- Links desktop -->
       <ul class="navbar-nav d-none d-lg-flex flex-row gap-4">

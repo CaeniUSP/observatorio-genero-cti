@@ -6,7 +6,6 @@
         <IndicadoresSection />
         <EquipeSection />
         <PublicacoesSection />
-        <ContatoSection />
         <PatrocinadoresSection />
         <FooterSection />
     </div>
@@ -19,7 +18,6 @@
   import IndicadoresSection from '../components/IndicadoresSection.vue'
   import PublicacoesSection from '../components/PublicacoesSection.vue'
   import EquipeSection    from '../components/EquipeSection.vue'
-  import ContatoSection   from '../components/ContatoSection.vue'
   import FooterSection    from '../components/FooterSection.vue'
   import PatrocinadoresSection from '../components/PatrocinadoresSection.vue'
   </script>
