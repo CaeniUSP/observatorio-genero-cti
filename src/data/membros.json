@@ -1,0 +1,45 @@
+[
+    {
+      "nome": "Janina Onuki",
+      "cargo": "Coordenadora",
+      "descricao": "Professora Titular do Departamento de Ciência Política da USP, Coordenadora do Projeto FAPESP Gender STI. É presidente da Comissão de Pesquisa e Inovação do Instituto de Estudos Avançados da USP e Editora-Chefe da Brazilian Political Science Review.",
+      "imagem": "prof_Janina.jpeg"
+    },
+    {
+    "nome": "Kelly Komatsu Agopyan",
+    "cargo": "Pesquisadora",
+    "descricao": "Doutora em Relações Internacionais pelo IRI-USP, pós-doc do Instituto de Estudos Avançados.",
+    "imagem": "avatar.png"
+    },
+    {
+    "nome": "Flavia Couto",
+    "cargo": "Pesquisadora",
+    "descricao": "Bacharel em Ciências Sociais pela FFLCH-USP e mestranda no Departamento de Ciência Política da USP.",
+    "imagem": "avatar.png"
+    },
+    {
+    "nome": "Sofia Martins",
+    "cargo": "Pesquisadora",
+    "descricao": "Bacharel em Relações Internacionais pela UnB, mestranda no IRI-USP.",
+    "imagem": "avatar.png"
+    },
+    {
+    "nome": "Giovanna Santana",
+    "cargo": "Pesquisadora",
+    "descricao": "Graduanda em Relações Internacionais na USP.",
+    "imagem": "avatar.png"
+    },
+    {
+    "nome": "Giulia Mello",
+    "cargo": "Pesquisadora",
+    "descricao": "Graduanda em Relações Internacionais na USP.",
+    "imagem": "avatar.png"
+    },
+    {
+    "nome": "Yasmin Carvalho",
+    "cargo": "Pesquisadora",
+    "descricao": "Graduanda em Relações Internacionais na USP.",
+    "imagem": "avatar.png"
+    }
+  ]
+  
