@@ -28,8 +28,8 @@ function toggleExpand(m) {
 </script>
 
 <template>
-  <section id="equipe" class="py-16 px-4 bg-white text-gray-800">
-    <h2 class="text-3xl font-semibold mb-10 text-center">Equipe</h2>
+  <section id="equipe" class="container py-16 px-4 bg-white text-gray-800">
+    <h2 class="text-3xl font-semibold">Equipe</h2>
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-wrap justify-center items-start">
         <div
